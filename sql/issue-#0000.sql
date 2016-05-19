@@ -1,0 +1,6 @@
+ CREATE TABLE "PF"
+ (
+
+ ) WITH (
+  OIDS=FALSE
+ );
