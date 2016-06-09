@@ -1,0 +1,15 @@
+{
+    "exclude": [
+        "node_modules",
+        "typings"
+    ],
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "outDir": "./dist",
+        "rootDir": "src",
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "allowSyntheticDefaultImports": true
+    }
+}
