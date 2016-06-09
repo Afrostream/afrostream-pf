@@ -18,7 +18,7 @@
   "license": "ISC",
   "dependencies": {
     "afrostream-node-app": "git+ssh://git@github.com/Afrostream/afrostream-node-app.git#v2.0.0",
-    "afrostream-node-config": "git+ssh://git@github.com/Afrostream/afrostream-node-config.git#v2.0.0",
+    "afrostream-node-config": "git+ssh://git@github.com/Afrostream/afrostream-node-config.git#v2.1.0",
     "afrostream-node-middleware-error": "git+ssh://git@github.com/Afrostream/afrostream-node-middleware-error.git#v1.0.0",
     "babel-plugin-syntax-async-functions": "^6.5.0",
     "babel-plugin-transform-regenerator": "^6.5.2",
