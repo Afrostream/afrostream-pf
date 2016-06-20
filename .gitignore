@@ -1,14 +1,6 @@
-/node_modules
-node_modules
-public
-.tmp
+# IDE
 .idea
-client/bower_components
-dist
-/server/config/local.env.js
+# node
+/node_modules
+# npm
 npm-debug.log
-# babel
-*-compiled.js
-*-compiled.js.map
-#
-app/temp

@@ -4,20 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "echo 'requiring node v6.2.1' && . ~/.nvm/nvm.sh && nvm use 6.2.1 && node_modules/.bin/nodemon dist/server.js",
+    "dev": "echo 'requiring node v6.2.2' && . ~/.nvm/nvm.sh && nvm use 6.2.2 && node_modules/.bin/nodemon dist/server.js",
     "start": "node dist/server.js",
     "compile": "node_modules/.bin/tsc",
     "compile:watch": "node_modules/.bin/tsc -w",
     "lint": "find src -name '*.ts' | xargs -n 1 node_modules/.bin/tslint -c tslint.json ",
     "clean": "rimraf dist/*",
-    "test": "npm run clean && npm run compile && npm run lint && . ~/.nvm/nvm.sh && nvm use 4.4.5 && node_modules/.bin/mocha -b test/integration/"
+    "test": "npm run clean && npm run compile && npm run lint && . ~/.nvm/nvm.sh && nvm use 4.4.5 && node_modules/.bin/mocha -b test/integration/",
+    "prepublish": "npm run clean && npm run compile -- --declaration"
   },
   "engines": {
-    "node": "6.2.1"
+    "node": "6.2.2"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "afrostream-node-cluster": "git+https://afrostream-tech:d51e355769ddd0fd212084c35fb99f71ab4146b2@github.com/Afrostream/afrostream-node-cluster.git#v1.0.0",
     "rimraf": "^2.5.2",
     "sequelize": "^3.19.3",
     "tslint": "^3.11.0",
