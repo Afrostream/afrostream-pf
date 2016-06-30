@@ -2,20 +2,16 @@
 
 REST api superset of Afrostream PF (video platform)
 
-# Install
+# Golang Install for ubuntu
 
-# Details
-
-# Golang Install on ubuntu
-
-install go
 ```
 sudo add-apt-repository ppa:ubuntu-lxc/lxd-stable
 sudo apt-get update
 sudo apt-get install golang
 ```
 
-install dependency management tool
+install dependency management tool "godep"
+
 ```
 go get github.com/tools/godep
 ```
@@ -30,8 +26,10 @@ source ~/.bashrc
 
 # Download the source code
 
+we want to work in ~/go/src/github.com/afrostream/afrostream-pf :
+
 ```
-# create your directory
+# create the directory
 mkdir -p $GOPATH/src/github.com/afrostream
 cd  $GOPATH/src/github.com/afrostream
 git clone git@github.com:Afrostream/afrostream-pf.git
@@ -39,8 +37,16 @@ git clone git@github.com:Afrostream/afrostream-pf.git
 cd $GOPATH/src/github.com/afrostream/afrostream-pf
 ```
 
-# Build
+# Run dev
 
 ```
-make
+npm run dev
+```
+
+# Run prod
+
+```
+npm run clean
+npm run build
+npm start
 ```
