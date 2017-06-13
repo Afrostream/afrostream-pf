@@ -49,13 +49,13 @@ router.get('/uploadToBouyguesSFTP', noCache, (req, res) => {
       // the old method was to handcraft a SQL query :
       // UPDATE assets SET state='scheduled' WHERE presetId IN ('11','16','41','43') AND contentId=(SELECT contentId FROM contents WHERE uuid='$i')
       if (!Array.isArray(content.assets)) throw new Error('content.assets should be an array');
-      if (content.assets.length > 10) throw new Error('shouldnt have that many assets ??? - security break');
+      const assets = content.assets.filter(asset => [11, 16, 41, 43].indexOf(asset.presetId) !== -1);
+      if (assets.length > 4) throw new Error('shouldnt have that many assets ??? - security break');
       return Q.all(
-        content.assets.filter(asset => [11, 16, 41, 43].indexOf(asset.presetId) !== -1)
-                      .map(asset => {
-                        console.log(`[INFO]: updating contentId ${req.query.contentId} assetId ${asset.assetId} => state=scheduled`);
-                        return asset.update({state:'scheduled'});
-                      })
+        assets.map(asset => {
+          console.log(`[INFO]: updating contentId ${req.query.contentId} assetId ${asset.assetId} => state=scheduled`);
+          return asset.update({state:'scheduled'});
+        })
       );
     })
     .then(assets => res.json(assets))
