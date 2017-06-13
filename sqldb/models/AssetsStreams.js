@@ -23,5 +23,7 @@ module.exports = function (sequelize, DataTypes) {
     width: DataTypes.INTEGER(6),
     height: DataTypes.INTEGER(6),
     fps: DataTypes.INTEGER(6)
+  }, {
+    tableName: 'assetsStreams'
   });
 };
