@@ -60,7 +60,7 @@ module.exports.show = function (options) {
 
     const queryOptions = qb
       .setRootModel(Model)
-      .setInitialQueryOptions(qoWhere)
+      .setInitialQueryOptions({where:qoWhere})
       .populate(req.query.populate || '',  mandatoryAssociations, optionalAssociations)
       .getQueryOptions();
 
