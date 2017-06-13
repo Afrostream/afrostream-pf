@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node_modules/.bin/nodemon server.js",
     "start": "node server.js",
-    "pfStart": "/home/ubuntu/tools/node/node-v6.11.0-linux-x64/bin/node server.js",
+    "pfStart": "export NODE_ENV=production && /home/ubuntu/tools/node/node-v6.11.0-linux-x64/bin/node server.js",
     "lint": "./node_modules/.bin/eslint ."
   },
   "repository": {
