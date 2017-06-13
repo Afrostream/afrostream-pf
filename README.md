@@ -21,3 +21,12 @@ Assets are the result of the Transcode operation.
 a Content can have multiple Assets  
 an Asset is linked to a Content and to a Preset  
 an Asset can depends on another Asset
+
+
+# p-afsmch-001
+
+launch the server :
+```
+cd /home/ubuntu/tools/node/afrostream-pf
+nohup bash -c "export NODE_ENV=production && /home/ubuntu/tools/node/node-v6.11.0-linux-x64/bin/node server.js" &
+```
