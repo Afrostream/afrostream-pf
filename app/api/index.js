@@ -62,4 +62,37 @@ router.get('/uploadToBouyguesSFTP', noCache, (req, res) => {
     .catch(res.handleError());
 });
 
+router.get('/updateAssetState', noCache, (req, res) => {
+  Q()
+    .then(() => {
+      if (!req.query.assetId) throw new Error('missing assetId');
+      if (!req.query.state) throw new Error('missing state');
+      // first, read the asset
+      return sqldb.Asset.findOne({where:{assetId: req.query.assetId}});
+    })
+    .then(asset => {
+      if (!asset) throw new Error('asset not found');
+      return asset.update({state: req.query.state});
+    })
+    .then(asset => res.json(asset))
+    .catch(res.handleError());
+});
+
+router.get('/updateContentState', noCache, (req, res) => {
+  Q()
+    .then(() => {
+      if (!req.query.contentId) throw new Error('missing contentId');
+      if (!req.query.state) throw new Error('missing state');
+      // first, read the asset
+      return sqldb.Content.findOne({where:{contentId: req.query.contentId}});
+    })
+    .then(content => {
+      if (!content) throw new Error('content not found');
+      return content.update({state: req.query.state});
+    })
+    .then(asset => res.json(asset))
+    .catch(res.handleError());
+
+});
+
 module.exports = router;
